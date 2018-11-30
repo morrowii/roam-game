@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
 
 class App extends Component {
+  state = {
+    message: "None"
+  }
+
+  componentDidMount() {
+    axios.get('/test').then(res => {
+      console.log(res.data);
+    });
+  }
+
   render() {
     return (
       <div className="App">
